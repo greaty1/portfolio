@@ -1,0 +1,2061 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Greaty | UGC Creator</title>
+
+    <meta
+        name="description"
+        content="Greaty is a UGC creator specializing in beauty, lifestyle, fashion and food content."
+    >
+
+    <meta
+        name="theme-color"
+        content="#f4eee8"
+    >
+
+    <!-- ======================================================
+         GOOGLE FONTS
+         ====================================================== -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Serif+Display:ital@0;1&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <style>
+
+        /* =====================================================
+           01. ROOT
+           ===================================================== */
+
+        :root {
+            --cream: #f4eee8;
+            --cream-dark: #ebe1d8;
+            --white: #fffdfb;
+            --black: #171615;
+            --soft-black: #292725;
+            --muted: #77716b;
+            --line: #d9d0c8;
+        }
+
+
+        /* =====================================================
+           02. RESET
+           ===================================================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: var(--cream);
+            color: var(--black);
+            font-family: "DM Sans", sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        img,
+        video {
+            max-width: 100%;
+            display: block;
+        }
+
+        img {
+            height: auto;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        button {
+            font: inherit;
+        }
+
+
+        /* =====================================================
+           03. GLOBAL
+           ===================================================== */
+
+        .container {
+            width: min(1200px, calc(100% - 48px));
+            margin: 0 auto;
+        }
+
+        .eyebrow {
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+        }
+
+        .section {
+            padding: 120px 0;
+        }
+
+
+        /* =====================================================
+           04. ACCESSIBILITY
+           ===================================================== */
+
+        a:focus-visible,
+        video:focus-visible {
+            outline: 3px solid var(--black);
+            outline-offset: 5px;
+        }
+
+        .contact-link:focus-visible,
+        .cta-button:focus-visible,
+        .hero-button:focus-visible,
+        .nav-contact:focus-visible {
+            outline-color: var(--white);
+        }
+
+
+        /* =====================================================
+           05. NAVIGATION
+           ===================================================== */
+
+        .nav {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 20;
+            padding: 28px 0;
+        }
+
+        .nav-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-size: 19px;
+            font-weight: 600;
+            letter-spacing: -0.04em;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 32px;
+            font-size: 13px;
+        }
+
+        .nav-links a {
+            transition: opacity 0.25s ease;
+        }
+
+        .nav-links a:hover {
+            opacity: 0.55;
+        }
+
+        .nav-contact {
+            border: 1px solid var(--black);
+            padding: 10px 18px;
+            border-radius: 30px;
+            transition:
+                background 0.25s ease,
+                color 0.25s ease;
+        }
+
+        .nav-contact:hover {
+            background: var(--black);
+            color: var(--white);
+            opacity: 1 !important;
+        }
+
+
+        /* =====================================================
+           06. HERO
+           ===================================================== */
+
+        .hero {
+            min-height: 100vh;
+            padding: 145px 0 80px;
+            display: flex;
+            align-items: center;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 0.9fr 1.1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .hero-photo-area {
+            position: relative;
+        }
+
+        .hero-photo {
+            width: 100%;
+            aspect-ratio: 0.82;
+            object-fit: cover;
+            border-radius: 24px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-photo-frame {
+            position: absolute;
+            width: 82%;
+            height: 82%;
+            right: -35px;
+            bottom: -35px;
+            background: var(--white);
+            border-radius: 24px;
+        }
+
+        .hero-small-label {
+            position: absolute;
+            z-index: 4;
+            left: -22px;
+            top: 45px;
+            background: var(--white);
+            padding: 14px 18px;
+            border-radius: 5px;
+            font-size: 11px;
+            letter-spacing: 0.13em;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        .hero-content {
+            position: relative;
+        }
+
+        .hero-intro {
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+
+        .hero-title {
+            font-size: clamp(76px, 11vw, 165px);
+            line-height: 0.78;
+            letter-spacing: -0.075em;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-left: -8px;
+        }
+
+        .hero-title span {
+            display: block;
+        }
+
+        .hero-title .serif {
+            font-family: "DM Serif Display", serif;
+            font-weight: 400;
+            text-transform: none;
+            font-style: italic;
+            letter-spacing: -0.06em;
+        }
+
+        .hero-role {
+            margin-top: 32px;
+            display: inline-block;
+            background: var(--white);
+            padding: 13px 20px;
+            border-radius: 4px;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+
+        .hero-copy {
+            max-width: 500px;
+            margin-top: 28px;
+            font-size: 17px;
+            color: var(--soft-black);
+        }
+
+        .hero-niches {
+            margin-top: 22px;
+            font-size: 12px;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--muted);
+        }
+
+        .hero-button {
+            display: inline-flex;
+            margin-top: 34px;
+            padding: 15px 25px;
+            background: var(--black);
+            color: var(--white);
+            border-radius: 40px;
+            font-size: 13px;
+            font-weight: 600;
+            transition:
+                transform 0.25s ease,
+                background 0.25s ease;
+        }
+
+        .hero-button:hover {
+            transform: translateY(-3px);
+        }
+
+
+        /* =====================================================
+           07. BRAND STRIP
+           ===================================================== */
+
+        .marquee {
+            border-top: 1px solid var(--line);
+            border-bottom: 1px solid var(--line);
+            padding: 18px 0;
+            overflow: hidden;
+        }
+
+        .marquee-track {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px 35px;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.13em;
+            text-transform: uppercase;
+            color: var(--muted);
+        }
+
+
+        /* =====================================================
+           08. ABOUT
+           ===================================================== */
+
+        .about {
+            padding: 150px 0;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 0.75fr 1.25fr;
+            gap: 90px;
+            align-items: start;
+        }
+
+        .about-heading {
+            font-size: clamp(55px, 7vw, 105px);
+            line-height: 0.88;
+            letter-spacing: -0.065em;
+            text-transform: uppercase;
+        }
+
+        .about-heading em {
+            font-family: "DM Serif Display", serif;
+            font-weight: 400;
+            text-transform: none;
+        }
+
+        .about-card {
+            background: var(--white);
+            border-radius: 26px;
+            padding: 55px;
+        }
+
+        .about-card p {
+            font-size: clamp(21px, 2.2vw, 30px);
+            line-height: 1.35;
+            letter-spacing: -0.025em;
+        }
+
+        .about-small {
+            margin-top: 35px;
+            padding-top: 25px;
+            border-top: 1px solid var(--line);
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .about-small-item span {
+            display: block;
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.13em;
+            color: var(--muted);
+            margin-bottom: 7px;
+        }
+
+        .about-small-item strong {
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+
+        /* =====================================================
+           09. PORTFOLIO
+           ===================================================== */
+
+        .portfolio {
+            padding: 100px 0 150px;
+        }
+
+        .portfolio-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: end;
+            margin-bottom: 70px;
+        }
+
+        .portfolio-title {
+            font-size: clamp(65px, 9vw, 130px);
+            line-height: 0.82;
+            letter-spacing: -0.07em;
+            text-transform: uppercase;
+        }
+
+        .portfolio-title em {
+            font-family: "DM Serif Display", serif;
+            text-transform: none;
+            font-weight: 400;
+        }
+
+        .portfolio-description {
+            width: 270px;
+            font-size: 14px;
+            color: var(--muted);
+        }
+
+        .work-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .work-item {
+            position: relative;
+        }
+
+        .work-video {
+            background: var(--black);
+            border-radius: 22px;
+            overflow: hidden;
+            aspect-ratio: 0.72;
+        }
+
+        .work-video video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .work-info {
+            padding-top: 18px;
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .work-name {
+            font-size: 16px;
+            font-weight: 600;
+        }
+
+        .work-type {
+            font-size: 11px;
+            color: var(--muted);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-top: 3px;
+        }
+
+
+        /* =====================================================
+           10. WHY UGC
+           ===================================================== */
+
+        .why {
+            background: var(--white);
+            border-radius: 32px;
+            padding: 100px;
+        }
+
+        .why-grid {
+            display: grid;
+            grid-template-columns: 0.75fr 1.25fr;
+            gap: 100px;
+        }
+
+        .why-title {
+            font-size: clamp(55px, 7vw, 100px);
+            line-height: 0.88;
+            letter-spacing: -0.07em;
+            text-transform: uppercase;
+        }
+
+        .why-title em {
+            font-family: "DM Serif Display", serif;
+            text-transform: none;
+            font-weight: 400;
+        }
+
+        .why-content {
+            padding-top: 10px;
+        }
+
+        .why-lead {
+            font-size: clamp(24px, 3vw, 38px);
+            line-height: 1.2;
+            letter-spacing: -0.035em;
+            margin-bottom: 40px;
+        }
+
+        .why-copy {
+            max-width: 620px;
+            font-size: 16px;
+            color: var(--muted);
+        }
+
+        .why-points {
+            margin-top: 50px;
+            border-top: 1px solid var(--line);
+        }
+
+        .why-point {
+            padding: 20px 0;
+            border-bottom: 1px solid var(--line);
+            display: flex;
+            gap: 25px;
+        }
+
+        .why-point-number {
+            font-size: 11px;
+            color: var(--muted);
+        }
+
+        .why-point-text {
+            font-size: 15px;
+        }
+
+
+        /* =====================================================
+           11. SERVICES
+           ===================================================== */
+
+        .services {
+            padding: 150px 0;
+        }
+
+        .services-header {
+            margin-bottom: 65px;
+        }
+
+        .services-title {
+            font-size: clamp(70px, 10vw, 145px);
+            line-height: 0.8;
+            letter-spacing: -0.075em;
+            text-transform: uppercase;
+        }
+
+        .services-title em {
+            font-family: "DM Serif Display", serif;
+            font-weight: 400;
+            text-transform: none;
+        }
+
+        .service-list {
+            border-top: 1px solid var(--black);
+        }
+
+        .service-row {
+            display: grid;
+            grid-template-columns: 80px 1fr 1.2fr 40px;
+            align-items: center;
+            gap: 30px;
+            padding: 28px 0;
+            border-bottom: 1px solid var(--line);
+        }
+
+        .service-number {
+            font-size: 11px;
+            color: var(--muted);
+        }
+
+        .service-name {
+            font-size: 21px;
+            font-weight: 500;
+        }
+
+        .service-description {
+            font-size: 14px;
+            color: var(--muted);
+        }
+
+        .service-arrow {
+            font-size: 22px;
+            text-align: right;
+        }
+
+
+        /* =====================================================
+           12. CONCEPTS
+           ===================================================== */
+
+        .concepts {
+            padding-bottom: 150px;
+        }
+
+        .concept-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+
+        .concept-card {
+            background: var(--white);
+            border-radius: 25px;
+            overflow: hidden;
+        }
+
+        .concept-image {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            object-fit: cover;
+        }
+
+        .concept-content {
+            padding: 30px;
+        }
+
+        .concept-title {
+            font-size: 25px;
+            margin-bottom: 15px;
+        }
+
+        .concept-text {
+            font-size: 14px;
+            color: var(--muted);
+        }
+
+        .concept-list {
+            margin-top: 70px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            border-top: 1px solid var(--line);
+        }
+
+        .concept-item {
+            padding: 20px 0;
+            border-bottom: 1px solid var(--line);
+            font-size: 14px;
+        }
+
+
+        /* =====================================================
+           13. CONTACT
+           ===================================================== */
+
+        .cta {
+            padding: 50px 0 100px;
+        }
+
+        .cta-box {
+            background: var(--black);
+            color: var(--white);
+            border-radius: 30px;
+            padding: 90px;
+            text-align: center;
+        }
+
+        .cta-title {
+            font-size: clamp(65px, 10vw, 145px);
+            line-height: 0.8;
+            letter-spacing: -0.075em;
+            text-transform: uppercase;
+            margin: 25px auto 35px;
+        }
+
+        .cta-text {
+            max-width: 480px;
+            margin: 0 auto;
+            color: #c4beb8;
+            font-size: 15px;
+        }
+
+
+        /* =====================================================
+           CONTACT LINKS
+           ===================================================== */
+
+        .contact-links {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 14px;
+            margin: 40px auto 25px;
+            max-width: 950px;
+            text-align: left;
+        }
+
+        .contact-link {
+            display: flex;
+            align-items: center;
+            gap: 13px;
+            padding: 16px;
+            background: var(--cream);
+            color: var(--black);
+            border-radius: 18px;
+            transition:
+                transform 0.25s ease,
+                background 0.25s ease;
+        }
+
+        .contact-link:hover {
+            transform: translateY(-4px);
+            background: var(--white);
+        }
+
+        .contact-icon {
+            width: 44px;
+            height: 44px;
+            min-width: 44px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--black);
+            color: var(--white);
+            border-radius: 50%;
+        }
+
+        .contact-icon svg {
+            width: 20px;
+            height: 20px;
+            fill: currentColor;
+        }
+
+        .contact-link > span:last-child {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 1.35;
+            word-break: break-word;
+        }
+
+        .contact-link small {
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.13em;
+            opacity: 0.55;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 25px;
+            padding: 16px 28px;
+            background: var(--white);
+            color: var(--black);
+            border-radius: 40px;
+            font-size: 13px;
+            font-weight: 600;
+            transition:
+                transform 0.25s ease,
+                background 0.25s ease;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            background: var(--cream);
+        }
+
+
+        /* =====================================================
+           14. FOOTER
+           ===================================================== */
+
+        footer {
+            padding: 30px 0 45px;
+        }
+
+        .footer-inner {
+            border-top: 1px solid var(--line);
+            padding-top: 25px;
+            display: flex;
+            justify-content: space-between;
+            gap: 30px;
+            font-size: 12px;
+            color: var(--muted);
+        }
+
+
+        /* =====================================================
+           15. TABLET
+           ===================================================== */
+
+        @media (max-width: 900px) {
+
+            .container {
+                width: min(100% - 32px, 700px);
+            }
+
+            .nav {
+                padding: 20px 0;
+            }
+
+            .nav-links {
+                gap: 14px;
+            }
+
+            .nav-links a:not(.nav-contact) {
+                display: none;
+            }
+
+            .hero {
+                padding: 120px 0 80px;
+            }
+
+            .hero-grid {
+                grid-template-columns: 1fr;
+                gap: 65px;
+            }
+
+            .hero-photo-area {
+                width: 78%;
+                margin: 0 auto;
+            }
+
+            .hero-title {
+                font-size: clamp(70px, 18vw, 120px);
+            }
+
+            .about-grid,
+            .why-grid {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+
+            .about-card {
+                padding: 35px;
+            }
+
+            .why {
+                padding: 55px 35px;
+            }
+
+            .portfolio-top {
+                display: block;
+            }
+
+            .portfolio-description {
+                margin-top: 25px;
+                width: auto;
+                max-width: 450px;
+            }
+
+            .work-grid {
+                grid-template-columns: 1fr;
+                max-width: 400px;
+                margin: 0 auto;
+            }
+
+            .service-row {
+                grid-template-columns: 40px 1fr 25px;
+            }
+
+            .service-description {
+                display: none;
+            }
+
+            .concept-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .concept-list {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-box {
+                padding: 70px 25px;
+            }
+
+            .contact-links {
+                grid-template-columns: 1fr;
+                max-width: 480px;
+            }
+
+            .footer-inner {
+                flex-direction: column;
+            }
+        }
+
+
+        /* =====================================================
+           16. SMALL MOBILE
+           ===================================================== */
+
+        @media (max-width: 500px) {
+
+            .container {
+                width: min(100% - 28px, 700px);
+            }
+
+            .hero {
+                padding-top: 105px;
+            }
+
+            .hero-photo-area {
+                width: 90%;
+            }
+
+            .hero-small-label {
+                left: -10px;
+            }
+
+            .hero-title {
+                font-size: 70px;
+            }
+
+            .hero-copy {
+                font-size: 16px;
+            }
+
+            .about {
+                padding: 100px 0;
+            }
+
+            .about-small {
+                grid-template-columns: 1fr;
+            }
+
+            .about-card {
+                padding: 28px;
+            }
+
+            .why {
+                padding: 45px 25px;
+            }
+
+            .why-copy {
+                font-size: 15px;
+            }
+
+            .service-row {
+                grid-template-columns: 32px 1fr 20px;
+                gap: 12px;
+            }
+
+            .service-name {
+                font-size: 17px;
+            }
+
+            .service-arrow {
+                font-size: 18px;
+            }
+
+            .cta {
+                padding-bottom: 60px;
+            }
+
+            .cta-box {
+                padding: 60px 18px;
+                border-radius: 24px;
+            }
+
+            .cta-title {
+                font-size: 58px;
+            }
+
+            .cta-text {
+                font-size: 14px;
+            }
+
+            .contact-link {
+                padding: 14px;
+            }
+
+            .contact-icon {
+                width: 42px;
+                height: 42px;
+                min-width: 42px;
+            }
+
+            .contact-link > span:last-child {
+                font-size: 13px;
+            }
+
+            .marquee-track {
+                justify-content: flex-start;
+            }
+        }
+
+
+        /* =====================================================
+           17. REDUCED MOTION
+           ===================================================== */
+
+        @media (prefers-reduced-motion: reduce) {
+
+            html {
+                scroll-behavior: auto;
+            }
+
+            *,
+            *::before,
+            *::after {
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- ======================================================
+         NAVIGATION
+         ====================================================== -->
+
+    <nav class="nav">
+
+        <div class="container nav-inner">
+
+            <a href="#home" class="logo">
+                GREATY | UGC CREATOR.
+            </a>
+
+            <div class="nav-links">
+
+                <a href="#about">
+                    About
+                </a>
+
+                <a href="#work">
+                    Work
+                </a>
+
+                <a href="#services">
+                    Services
+                </a>
+
+                <a href="#contact" class="nav-contact">
+                    Let's Work
+                </a>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+
+    <!-- ======================================================
+         HERO
+         ====================================================== -->
+
+    <header class="hero" id="home">
+
+        <div class="container hero-grid">
+
+
+            <!-- HERO IMAGE -->
+
+            <div class="hero-photo-area">
+
+                <img
+                    src="images/IMG_5234.JPEG"
+                    alt="Greaty, UGC creator"
+                    class="hero-photo"
+                >
+
+            </div>
+
+
+            <!-- HERO TEXT -->
+
+            <div class="hero-content">
+
+                <p class="hero-intro">
+                    Hello, I'm
+                </p>
+
+                <h1 class="hero-title">
+
+                    <span>Greaty</span>
+
+                    <span class="serif">
+                        a UGC
+                    </span>
+
+                </h1>
+
+                <div class="hero-role">
+                    UGC Content Creator
+                </div>
+
+                <p class="hero-copy">
+                    I create authentic, engaging content that
+                    showcases products naturally and helps brands
+                    connect with their audience.
+                </p>
+
+                <p class="hero-niches">
+                    Beauty · Lifestyle · Fashion · Food
+                </p>
+
+                <a href="#work" class="hero-button">
+                    View My Work →
+                </a>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- ======================================================
+         BRAND STRIP
+         ====================================================== -->
+
+    <div class="marquee">
+
+        <div class="container marquee-track">
+
+            <span>Authentic Content</span>
+            <span>•</span>
+            <span>Product Storytelling</span>
+            <span>•</span>
+            <span>UGC Videos</span>
+            <span>•</span>
+            <span>Natural & Relatable</span>
+
+        </div>
+
+    </div>
+
+
+    <!-- ======================================================
+         ABOUT
+         ====================================================== -->
+
+    <section class="about" id="about">
+
+        <div class="container about-grid">
+
+            <div>
+
+                <div class="eyebrow">
+                    About Me
+                </div>
+
+                <h2 class="about-heading">
+
+                    Real
+                    <em>content.</em>
+
+                </h2>
+
+            </div>
+
+
+            <div class="about-card">
+
+                <p>
+                    I'm a UGC creator specializing in beauty,
+                    lifestyle, fashion, and food content.
+                    I create authentic, engaging videos that
+                    showcase products in a natural and relatable
+                    way, helping brands connect with their target
+                    audience.
+                </p>
+
+
+                <div class="about-small">
+
+                    <div class="about-small-item">
+
+                        <span>
+                            Creator
+                        </span>
+
+                        <strong>
+                            Greaty
+                        </strong>
+
+                    </div>
+
+
+                    <div class="about-small-item">
+
+                        <span>
+                            Focus
+                        </span>
+
+                        <strong>
+                            Short-form UGC
+                        </strong>
+
+                    </div>
+
+
+                    <div class="about-small-item">
+
+                        <span>
+                            Niches
+                        </span>
+
+                        <strong>
+                            Beauty · Lifestyle
+                        </strong>
+
+                    </div>
+
+
+                    <div class="about-small-item">
+
+                        <span>
+                            Content
+                        </span>
+
+                        <strong>
+                            Video · Product · Lifestyle
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ======================================================
+         PORTFOLIO
+         ====================================================== -->
+
+    <section class="portfolio" id="work">
+
+        <div class="container">
+
+
+            <div class="portfolio-top">
+
+                <div>
+
+                    <div class="eyebrow">
+                        Selected Work
+                    </div>
+
+                    <h2 class="portfolio-title">
+
+                        My
+                        <em>Work</em>
+
+                    </h2>
+
+                </div>
+
+
+                <p class="portfolio-description">
+                    A collection of UGC content created around
+                    products, experiences and everyday moments.
+                </p>
+
+            </div>
+
+
+            <div class="work-grid">
+
+
+                <!-- PROJECT 01 -->
+
+                <article class="work-item">
+
+                    <div class="work-video">
+
+                        <video
+                            controls
+                            playsinline
+                            preload="metadata"
+                            aria-label="Eke's Pot restaurant review video"
+                        >
+
+                            <source
+                                src="videos/eke.MP4"
+                                type="video/mp4"
+                            >
+
+                            Your browser does not support the video tag.
+
+                        </video>
+
+                    </div>
+
+
+                    <div class="work-info">
+
+                        <div>
+
+                            <div class="work-name">
+                                Eke's Pot
+                            </div>
+
+                            <div class="work-type">
+                                Restaurant Review
+                            </div>
+
+                        </div>
+
+                        <div>
+                            01
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- PROJECT 02 -->
+
+                <article class="work-item">
+
+                    <div class="work-video">
+
+                        <video
+                            controls
+                            playsinline
+                            preload="metadata"
+                            aria-label="Yanga Cuisine pastries review video"
+                        >
+
+                            <source
+                                src="videos/pangy.MP4"
+                                type="video/mp4"
+                            >
+
+                            Your browser does not support the video tag.
+
+                        </video>
+
+                    </div>
+
+
+                    <div class="work-info">
+
+                        <div>
+
+                            <div class="work-name">
+                                Yanga Cuisine
+                            </div>
+
+                            <div class="work-type">
+                                Pastries Review
+                            </div>
+
+                        </div>
+
+                        <div>
+                            02
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- PROJECT 03 -->
+
+                <article class="work-item">
+
+                    <div class="work-video">
+
+                        <video
+                            controls
+                            playsinline
+                            preload="metadata"
+                            aria-label="Karo's Treat product visibility video"
+                        >
+
+                            <!--
+                            IMPORTANT:
+                            Convert karo.MOV to MP4/H.264 for
+                            maximum browser compatibility.
+                            -->
+
+                            <source
+                                src="videos/karo.mp4"
+                                type="video/mp4"
+                            >
+
+                            Your browser does not support the video tag.
+
+                        </video>
+
+                    </div>
+
+
+                    <div class="work-info">
+
+                        <div>
+
+                            <div class="work-name">
+                                Karo's Treat
+                            </div>
+
+                            <div class="work-type">
+                                Product Visibility
+                            </div>
+
+                        </div>
+
+                        <div>
+                            03
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ======================================================
+         WHY UGC
+         ====================================================== -->
+
+    <section class="section">
+
+        <div class="container">
+
+            <div class="why">
+
+                <div class="why-grid">
+
+
+                    <div>
+
+                        <div class="eyebrow">
+                            Why UGC
+                        </div>
+
+                        <h2 class="why-title">
+
+                            Content
+                            <em>that feels real.</em>
+
+                        </h2>
+
+                    </div>
+
+
+                    <div class="why-content">
+
+                        <p class="why-lead">
+                            People connect with content that
+                            feels real.
+                        </p>
+
+
+                        <p class="why-copy">
+                            As a UGC creator, I create authentic,
+                            engaging videos that showcase your
+                            products naturally and capture the
+                            attention of your target audience.
+                            From product demos and unboxings to
+                            testimonials and lifestyle content,
+                            I help brands turn their products into
+                            content people want to watch and engage
+                            with.
+                        </p>
+
+
+                        <div class="why-points">
+
+
+                            <div class="why-point">
+
+                                <div class="why-point-number">
+                                    01
+                                </div>
+
+                                <div class="why-point-text">
+                                    Natural product demonstrations
+                                </div>
+
+                            </div>
+
+
+                            <div class="why-point">
+
+                                <div class="why-point-number">
+                                    02
+                                </div>
+
+                                <div class="why-point-text">
+                                    Relatable storytelling
+                                </div>
+
+                            </div>
+
+
+                            <div class="why-point">
+
+                                <div class="why-point-number">
+                                    03
+                                </div>
+
+                                <div class="why-point-text">
+                                    Short-form social content
+                                </div>
+
+                            </div>
+
+
+                            <div class="why-point">
+
+                                <div class="why-point-number">
+                                    04
+                                </div>
+
+                                <div class="why-point-text">
+                                    Content built around your product
+                                </div>
+
+                            </div>
+
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ======================================================
+         SERVICES
+         ====================================================== -->
+
+    <section class="services" id="services">
+
+        <div class="container">
+
+
+            <div class="services-header">
+
+                <div class="eyebrow">
+                  I create scroll-stopping UGC that feels natural, relatable, and authentic.
+                </div>
+
+                <h2 class="services-title">
+                    <em>What I Offer</em>
+
+                </h2>
+
+            </div>
+
+
+            <div class="service-list">
+
+
+                <div class="service-row">
+
+                    <div class="service-number">
+                        01
+                    </div>
+
+                    <div class="service-name">
+                        Product Demonstrations
+                    </div>
+
+                    <div class="service-description">
+                        Natural demonstrations showing how a product
+                        works and fits into everyday life.
+                    </div>
+
+                    <div class="service-arrow">
+                        ↗
+                    </div>
+
+                </div>
+
+
+                <div class="service-row">
+
+                    <div class="service-number">
+                        02
+                    </div>
+
+                    <div class="service-name">
+                        Unboxing & Reviews
+                    </div>
+
+                    <div class="service-description">
+                        Authentic first impressions, unboxing experiences
+                        and product reviews.
+                    </div>
+
+                    <div class="service-arrow">
+                        ↗
+                    </div>
+
+                </div>
+
+
+                <div class="service-row">
+
+                    <div class="service-number">
+                        03
+                    </div>
+
+                    <div class="service-name">
+                        Testimonials
+                    </div>
+
+                    <div class="service-description">
+                        Talking videos that communicate a genuine
+                        customer perspective.
+                    </div>
+
+                    <div class="service-arrow">
+                        ↗
+                    </div>
+
+                </div>
+
+
+                <div class="service-row">
+
+                    <div class="service-number">
+                        04
+                    </div>
+
+                    <div class="service-name">
+                        Voice-over Videos
+                    </div>
+
+                    <div class="service-description">
+                        Product-focused visual storytelling supported
+                        by natural voice-over.
+                    </div>
+
+                    <div class="service-arrow">
+                        ↗
+                    </div>
+
+                </div>
+
+
+                <div class="service-row">
+
+                    <div class="service-number">
+                        05
+                    </div>
+
+                    <div class="service-name">
+                        Lifestyle Content
+                    </div>
+
+                    <div class="service-description">
+                        Products integrated naturally into lifestyle,
+                        routine and everyday content.
+                    </div>
+
+                    <div class="service-arrow">
+                        ↗
+                    </div>
+
+                </div>
+
+
+                <div class="service-row">
+
+                    <div class="service-number">
+                        06
+                    </div>
+
+                    <div class="service-name">
+                        Social Media Ads
+                    </div>
+
+                    <div class="service-description">
+                        Short-form creative designed for social media
+                        advertising and product visibility.
+                    </div>
+
+                    <div class="service-arrow">
+                        ↗
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ======================================================
+         CONTENT CONCEPTS
+         ====================================================== -->
+
+    <section class="concepts">
+
+        <div class="container">
+
+
+            <div class="portfolio-top">
+
+                <div>
+
+                    <div class="eyebrow">
+                        Creative Direction
+                    </div>
+
+                    <h2 class="portfolio-title">
+
+                        Content
+                        <em>Concepts</em>
+
+                    </h2>
+
+                </div>
+
+
+                <p class="portfolio-description">
+                    Different ways I can bring a product into
+                    an authentic story.
+                </p>
+
+            </div>
+
+
+            <div class="concept-grid">
+
+
+                <!-- CONCEPT 01 -->
+
+                <div class="concept-card">
+
+                    <img
+                        src="images/Product.jpeg"
+                        alt="Product-focused UGC content concept"
+                        class="concept-image"
+                        loading="lazy"
+                    >
+
+                    <div class="concept-content">
+
+                        <h3 class="concept-title">
+                            Product Stories
+                        </h3>
+
+                        <p class="concept-text">
+                            Content that introduces a product
+                            naturally through everyday moments,
+                            demonstrations and storytelling.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- CONCEPT 02 -->
+
+                <div class="concept-card">
+
+                    <img
+                        src="images/IMG_6364.JPEG"
+                        alt="Lifestyle UGC content concept"
+                        class="concept-image"
+                        loading="lazy"
+                    >
+
+                    <div class="concept-content">
+
+                        <h3 class="concept-title">
+                            Everyday Content
+                        </h3>
+
+                        <p class="concept-text">
+                            Relatable lifestyle content designed
+                            to make products feel like a natural
+                            part of the viewer's day.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+            <div class="concept-list">
+
+                <div class="concept-item">
+                    Product Reviews
+                </div>
+
+                <div class="concept-item">
+                    Unboxing Videos
+                </div>
+
+                <div class="concept-item">
+                    Get Ready With Me
+                </div>
+
+                <div class="concept-item">
+                    Product Tutorials
+                </div>
+
+                <div class="concept-item">
+                    Problem → Solution
+                </div>
+
+                <div class="concept-item">
+                    A Day In My Life
+                </div>
+
+                <div class="concept-item">
+                    Product Demos
+                </div>
+
+                <div class="concept-item">
+                    Testimonial Videos
+                </div>
+
+                <div class="concept-item">
+                    Voice-over Videos
+                </div>
+
+                <div class="concept-item">
+                    Lifestyle Content
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ======================================================
+         CONTACT
+         ====================================================== -->
+
+    <section class="cta" id="contact">
+
+        <div class="container">
+
+            <div class="cta-box">
+
+                <div class="eyebrow">
+                    Let's Work Together
+                </div>
+
+
+                <h2 class="cta-title">
+                    Bring Your<br>
+                    Product To Life
+                </h2>
+
+
+                <p class="cta-text">
+                    Have a product or brand you'd love to create
+                    content for? Let's make something authentic
+                    together.
+                </p>
+
+
+                <!-- CONTACT LINKS -->
+
+                <div class="contact-links">
+
+
+                    <!-- TIKTOK -->
+
+                    <a
+                        href="https://www.tiktok.com/@dubaere1234"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="contact-link"
+                        aria-label="Visit Greaty's TikTok profile"
+                    >
+
+                        <span class="contact-icon">
+
+                            <svg
+                                viewBox="0 0 24 24"
+                                aria-hidden="true"
+                            >
+
+                                <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-3.95h-3.11v13.24a2.91 2.91 0 1 1-2-2.75V10.1a6.03 6.03 0 1 0 5.24 5.98V9.36a7.94 7.94 0 0 0 4.65 1.5V7.74a4.84 4.84 0 0 1-1.01-1.05Z"/>
+
+                            </svg>
+
+                        </span>
+
+
+                        <span>
+
+                            <small>TikTok</small>
+
+                            @dubaere1234
+
+                        </span>
+
+                    </a>
+
+
+                    <!-- EMAIL -->
+
+                    <a
+                        href="mailto:cliffgreat313@icloud.com"
+                        class="contact-link"
+                        aria-label="Send Greaty an email"
+                    >
+
+                        <span class="contact-icon">
+
+                            <svg
+                                viewBox="0 0 24 24"
+                                aria-hidden="true"
+                            >
+
+                                <path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 4-8 5-8-5V6l8 5 8-5v2Z"/>
+
+                            </svg>
+
+                        </span>
+
+
+                        <span>
+
+                            <small>Email</small>
+
+                            cliffgreat313@icloud.com
+
+                        </span>
+
+                    </a>
+
+
+                    <!-- PHONE -->
+
+                    <a
+                        href="tel:+2348056054850"
+                        class="contact-link"
+                        aria-label="Call Greaty"
+                    >
+
+                        <span class="contact-icon">
+
+                            <svg
+                                viewBox="0 0 24 24"
+                                aria-hidden="true"
+                            >
+
+                                <path d="M6.62 10.79a15.46 15.46 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.02-.24c1.12.37 2.33.56 3.57.56a1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.16 21 3 13.84 3 5a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.56 3.57a1 1 0 0 1-.25 1.02l-2.19 2.2Z"/>
+
+                            </svg>
+
+                        </span>
+
+
+                        <span>
+
+                            <small>Phone</small>
+
+                            +234 805 605 4850
+
+                        </span>
+
+                    </a>
+
+
+                </div>
+
+
+                <!-- EMAIL CTA -->
+
+                <a
+                    href="mailto:cliffgreat313@icloud.com"
+                    class="cta-button"
+                >
+                    Send An Inquiry
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ======================================================
+         FOOTER
+         ====================================================== -->
+
+    <footer>
+
+        <div class="container footer-inner">
+
+            <div>
+                © 2026 Greaty
+            </div>
+
+            <div>
+                UGC Creator · Beauty · Lifestyle · Fashion · Food
+            </div>
+
+        </div>
+
+    </footer>
+
+
+</body>
+
+</html>
